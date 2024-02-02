@@ -8,18 +8,11 @@ import (
 	"net/http"
 )
 
-type locations struct {
-	Count    int    `json:"count"`
-	Next     string `json:"next"`
-	Previous any    `json:"previous"`
-	Results  []struct {
-		Name string `json:"name"`
-		URL  string `json:"url"`
-	} `json:"results"`
-}
+var page int = 0
 
-func getLocations() (locations, error) {
-	url := "https://pokeapi.co/api/v2/location/"
+func getLocations() (Locations, error) {
+	offset := page * 20
+	url := fmt.Sprintf("https://pokeapi.co/api/v2/location-area/?offset=%v&limit=20", offset)
 	res, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
@@ -32,10 +25,7 @@ func getLocations() (locations, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	location := locations{}
+	location := Locations{}
 	err = json.Unmarshal(body, &location)
-	for _, loc := range location.Results {
-		fmt.Println(loc.Name)
-	}
 	return location, nil
 }

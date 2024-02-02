@@ -5,9 +5,11 @@ import (
 )
 
 func commandMap() error {
-	location, _ := getLocations()
-	for _, loc := range location.Results {
-		fmt.Println(loc.Name)
+	loc, _ := getLocations()
+	for _, l := range loc.Results {
+		fmt.Println(l.Name)
 	}
+	println("page: ", page)
+	page++
 	return nil
 }
