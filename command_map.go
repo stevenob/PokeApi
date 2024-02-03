@@ -5,11 +5,11 @@ import (
 )
 
 func commandMap() error {
-	loc, _ := getLocations()
+	loc, err := getLocations()
 	for _, l := range loc.Results {
 		fmt.Println(l.Name)
 	}
 	println("page: ", page)
 	page++
-	return nil
+	return err
 }

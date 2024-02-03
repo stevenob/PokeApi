@@ -27,5 +27,5 @@ func getLocations() (Locations, error) {
 	}
 	location := Locations{}
 	err = json.Unmarshal(body, &location)
-	return location, nil
+	return location, err
 }
