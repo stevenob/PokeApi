@@ -7,17 +7,7 @@ import (
 	"net/http"
 )
 
-var page int = 0
-
-// var loc_cache pokecache.Cache = pokecache.NewCache(5*time.Second, time.Minute*5)
-
-func getLocations(url string) (Locations, error) {
-	// _, found := loc_cache.Get("locations")
-	// if va {
-	// 	location := Locations{}
-	// 	err := json.Unmarshal(loc_cache["locations"].val, &location)
-	// 	return location, err
-	// }
+func getLocalPokemon(url string) (LocalPokemon, error) {
 	baseUrl := "https://pokeapi.co/api/v2/location-area/"
 	res, err := http.Get(baseUrl + url)
 	if err != nil {
@@ -32,7 +22,7 @@ func getLocations(url string) (Locations, error) {
 		log.Fatal(err)
 	}
 	// pokecache.cache.Add(url, body)
-	location := Locations{}
-	err = json.Unmarshal(body, &location)
-	return location, err
+	lp := LocalPokemon{}
+	err = json.Unmarshal(body, &lp)
+	return lp, err
 }

@@ -1,8 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
-//Test get_commands.getCommands()
+// Test get_commands.getCommands()
 func TestGetCommands(t *testing.T) {
 	cmd := getCommands()
 	if cmd == nil {
@@ -10,7 +12,7 @@ func TestGetCommands(t *testing.T) {
 	}
 }
 
-//Test command_help.commandHelp()
+// Test command_help.commandHelp()
 func TestCommandHelp(t *testing.T) {
 	err := commandHelp()
 	if err != nil {
@@ -18,7 +20,7 @@ func TestCommandHelp(t *testing.T) {
 	}
 }
 
-//Test command_map.commandMap()
+// Test command_map.commandMap()
 func TestCommandMap(t *testing.T) {
 	err := commandMap()
 	if err != nil {
@@ -26,7 +28,7 @@ func TestCommandMap(t *testing.T) {
 	}
 }
 
-//Test command_mapb.commandMapb()
+// Test command_mapb.commandMapb()
 func TestCommandMapb(t *testing.T) {
 	err := commandMapb()
 	if err != nil {
