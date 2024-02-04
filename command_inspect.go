@@ -6,6 +6,11 @@ import (
 
 func commandInspect(args ...string) error {
 	name := args[0]
+	_, ok := pokedex[name]
+	if !ok {
+		fmt.Println("You have not caught that pokemon")
+		return nil
+	}
 	pokemon, err := getPokemon(name)
 	fmt.Printf("\nName: %s\nHeight: %v\nWeight: %v\n", pokemon.Name, pokemon.Height, pokemon.Weight)
 	statLst := []string{"-hp:", "-attack:", "-defense:", "-special-attack:", "-special-defense:", "-speed:"}

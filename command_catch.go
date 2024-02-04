@@ -5,7 +5,7 @@ import (
 	"math/rand"
 )
 
-var pokedex map[string]Pokemon
+var pokedex = make(map[string]Pokemon)
 
 func commandCatch(args ...string) error {
 	name := args[0]
@@ -15,6 +15,7 @@ func commandCatch(args ...string) error {
 	if chance < 40 {
 		fmt.Printf("%s was caught!\n", name)
 		pokedex[name] = pokemon
+		fmt.Println("You may now inspect it with the inspect command.")
 	} else {
 		fmt.Printf("%s escaped!\n", name)
 	}
