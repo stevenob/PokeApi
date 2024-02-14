@@ -25,3 +25,28 @@ go build && PokedexCli.exe
 | explore| Display pokemon in area|
 | help| Display this menu|
 | exit| exit program|
+
+## 🤝 Contributing
+
+### Clone the repo
+
+```bash
+git clone https://github.com/stevenob/PokedexCli@latest
+cd PokedexCli
+```
+
+### Build the project
+
+```bash
+go build
+```
+
+### Run the project
+
+```bash
+./PokedexCli
+```
+
+### Submit a pull request
+
+If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
