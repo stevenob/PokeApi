@@ -1,6 +1,6 @@
 # POKEDEX CLI
 
-### Simple CLI using api calls to pokeapi.co
+### Interactive way to get information about pokemon from different generations.  Can also be used to load information about map areas and catch pokemon to display more detailed information.
 
 | Command | Description |
 | --- | --- |
