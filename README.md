@@ -23,4 +23,5 @@ go build && ./PokedexCli
 
 On Windows:
 ```
-go build %% PokedexCli.exe
+go build && PokedexCli.exe
+```
