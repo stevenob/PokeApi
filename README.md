@@ -11,3 +11,16 @@
 | explore| Display pokemon in area|
 | help| Display this menu|
 | exit| exit program|
+
+## 🔥 Quick Start 💧
+
+### Compile and start PokedexCli
+
+On Linux or Mac:
+```
+go build && ./PokedexCli
+```
+
+On Windows:
+```
+go build %% PokedexCli.exe
